@@ -1,26 +1,30 @@
 <ion-side-menus>
 
   <ion-pane ion-side-menu-content>
-    <ion-nav-bar class="bar-energized nav-title-slide-ios7">
+    <ion-nav-bar class="bar-calm nav-title-slide-ios7">
       <ion-nav-back-button class="button-clear"><i class="icon ion-ios7-arrow-back"></i> Back</ion-nav-back-button>
     </ion-nav-bar>
     <ion-nav-view name="menuContent" animation="slide-left-right"></ion-nav-view>
   </ion-pane>
 
-  <ion-side-menu side="left" class="row-50">
-    <ion-content>
+  <ion-side-menu side="left" class="side-menu">
+    <ion-content class="side-menu__content">
       <ion-list>
         <ion-item nav-clear menu-close ng-click="LoginManager.showLogin()">
+          <i class="list-icon icon ion-log-in light"></i>
           Login
         </ion-item>
-        <ion-item nav-clear menu-close href="#/app/search">
-          Search
+        <ion-item nav-clear menu-close href="#/app/profile">
+          <i class="list-icon icon ion-person light"></i>
+          Profile
         </ion-item>
         <ion-item nav-clear menu-close href="#/app/browse">
-          Browse
+          <i class="list-icon icon ion-briefcase light"></i>
+          Projects
         </ion-item>
-        <ion-item nav-clear menu-close href="#/app/playlists">
-          Playlists
+        <ion-item nav-clear menu-close href="#/app/rewards">
+          <i class="list-icon icon ion-trophy light"></i>
+          Rewards
         </ion-item>
       </ion-list>
     </ion-content>

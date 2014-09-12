@@ -1,0 +1,45 @@
+<ion-view title="Project Information">
+  <ion-content class="has-header">
+	  <div class="list card project-card">
+			<div class="item item-image">
+		    	<img ng-src="{{project.image}}">
+		  	</div>
+		  	
+    		<span class="text--emphasized text--uppercase">
+    			{{project.name}}
+    		</span>
+		  	<div class="item item-body">
+		  		<div class="row">
+		  			<span class="col col-75 text--sm">
+		  				Objective
+		  			</span>
+		  			<span class="col text--sm text--right">
+		  				${{project.objective}}
+		  			</span>
+		  		</div>
+		  		<div class="row">
+		  			<span class="col col-75 text--sm">
+		  				Days to go
+		  			</span>
+		  			<span class="col text--sm text--right">
+		  				{{project.duedate | daysleft}}
+		  			</span>
+		  		</div>
+		  		<div class="row">
+		  			<span class="col col-75 text--sm">
+		  				Status
+		  			</span>
+		  			<span class="col text--sm text--right">
+		  				<progress max="{{project.objective}}" value="{{project.completed}}"></progress>
+		  			</span>
+		  		</div>
+		  		<span class="text--emphasized">Description</span>
+		  		<p class="text">
+		  			{{project.description}}
+		  		</p>
+		  		
+		  	</div>
+		  	<a class="button button-block button-calm" ui-sref="app.support({projectid: project.id })">Support</a>
+		</div>
+  </ion-content>
+</ion-view>

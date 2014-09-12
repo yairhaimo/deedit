@@ -1,0 +1,14 @@
+<ion-view title="Profile">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <ion-content class="has-header">
+    <img class="user-picture" ng-src="{{LoginManager.user.thirdPartyUserData.picture.data.url}}">
+    <ion-list>
+      <ion-item href="#/app/playlists/{{playlist.id}}">
+          <i class="list-icon icon ion-person calm text--xl"></i>
+          {{LoginManager.user.displayName}}   
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

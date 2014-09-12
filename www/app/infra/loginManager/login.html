@@ -1,13 +1,13 @@
 <div class="modal">
-  <ion-header-bar>
+  <!-- <ion-header-bar>
     <h1 class="title">Login</h1>
     <div class="buttons">
-      <button class="button button-clear" ng-click="LoginManager.closeLogin()">Close</button>
+      <button class="button button-clear" ng-click="LoginManager.logout()">Close</button>
     </div>
-  </ion-header-bar>
+  </ion-header-bar> -->
   <ion-content>
-    <form ng-submit="LoginManager.doLogin({username: loginData.username, password: loginData.password})">
-      <div class="list">
+    <form ng-submit="LoginManager.login({username: loginData.username, password: loginData.password})" class="padding row-50">
+      <!-- <div class="list">
         <label class="item item-input">
           <span class="input-label">Username</span>
           <input type="text" ng-model="loginData.username">
@@ -19,7 +19,8 @@
         <label class="item">
           <button class="button button-block button-positive" type="submit">Log in2</button>
         </label>
-      </div>
+      </div> -->
+        <button class="button button-block button-calm" type="submit">Log in with <i class="icon ion-social-facebook-outline text--lg"></i>acebook</button>
     </form>
   </ion-content>
 </div>

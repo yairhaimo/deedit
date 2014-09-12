@@ -1,17 +1,20 @@
-<ion-view title="Browse">
+<ion-view title="Select Project">
   <ion-nav-buttons side="left">
     <button menu-toggle="left"class="button button-icon icon ion-navicon"></button>
   </ion-nav-buttons>
   <ion-content class="has-header">
-  Which Project would you like to support:
-    
-	<div class="list card project-card" ng-repeat="item in items">
+  	<div ng-if="!LoginManager.user">
+  		Log in to browse projects
+  	</div>
+
+	<!-- TODO: change to collection-repeat -->
+	<div class="list card project-card" ng-repeat="project in projects" ng-if="LoginManager.user">
 		<div class="item item-image">
-	    	<img src="http://lorempizza.com/380/240">
+	    	<img ng-src="{{project.image}}">
 	  	</div>
-	  	<a href="#" class="item item-icon-right">
+	  	<a ui-sref="app.project({projectid:{{project.id}}})" class="item item-icon-right">
     		<span class="text--emphasized text--uppercase">
-    			{{item.title}}
+    			{{project.name}}
     		</span>
     		<i class="icon ion-ios7-information-outline"></i>
 		</a>
@@ -20,28 +23,28 @@
 	  			<span class="col col-75 text--sm">
 	  				Objective
 	  			</span>
-	  			<span class="col text--sm">
-	  				${{item.objective}}
+	  			<span class="col text--sm text--right">
+	  				${{project.objective}}
 	  			</span>
 	  		</div>
 	  		<div class="row">
 	  			<span class="col col-75 text--sm">
 	  				Days to go
 	  			</span>
-	  			<span class="col text--sm">
-	  				<span class="pull-right">{{item.daysleft}}</span>
+	  			<span class="col text--sm text--right">
+	  				{{project.duedate | daysleft}}
 	  			</span>
 	  		</div>
 	  		<div class="row">
 	  			<span class="col col-75 text--sm">
 	  				Status
 	  			</span>
-	  			<span class="col text--sm">
-	  				{{item.completed}}
+	  			<span class="col text--sm text--right">
+	  				<progress max="{{project.objective}}" value="{{project.completed}}"></progress>
 	  			</span>
 	  		</div>
 	  	</div>
-	  	<button class="button button-block button-calm">Support</button>
+	  	<a class="button button-block button-calm" ui-sref="app.support({projectid: project.id })">Support</a>
 	</div>
 	
   </ion-content>

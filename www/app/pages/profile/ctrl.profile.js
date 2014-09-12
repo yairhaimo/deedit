@@ -1,9 +1,10 @@
 (function() {
 	'use strict';
 	var page = angular.module('deedit.pages');
-	page.controller('MenuController', function($log, $scope) {
+	page.controller('ProfileController', function($log, $scope) {
+
 		function init() {
-			$log.log('Init MenuController');
+			$log.log('Init ProfileController');
 		}
 		init();
 	});

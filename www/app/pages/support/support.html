@@ -1,0 +1,29 @@
+<ion-view title="Deed it">
+	<ion-content class="has-header">
+		<div class="padding">
+			<div class="padding">
+	  			<p class="text--centered">
+	  				You've chosen "{{project.name}}" and that's awesome!
+	  			</p>
+	  		</div>
+	  		<div class="item item-image">
+	   			<img ng-src="{{project.image}}">
+	   		</div>
+	   		<div class="padding">
+		   		<p class="text--centered">How would you like to engage?</p>
+		   		<a class="button button-block button-light text--uppercase" ui-sref="app.look({projectid:project.id })">	
+		   			<i class="icon ion-images"></i>
+		   			look
+		   		</a> 
+		   		<a class="button button-block button-light text--uppercase" ui-sref="app.watch({projectid:project.id })">
+		   			<i class="icon ion-social-youtube-outline"></i>
+		   			watch
+		   		</a> 
+		   		<a class="button button-block button-light text--uppercase" ui-sref="app.play({projectid:project.id })">
+		   			<i class="icon ion-flag"></i>
+		   			play
+		   		</a> 
+		   	</div>
+   		</div>
+  	</ion-content>
+</ion-view>

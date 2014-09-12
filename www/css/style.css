@@ -1,5 +1,8 @@
 /* Empty. Add your own CSS if you like */
 
+.right {
+	float: right;
+}
 
 .row-50 {	
 	margin-top: 50%;
@@ -7,10 +10,31 @@
 
 .project-card {
 	padding: 4px;
+	left: 0;
+	right: 0;
 }
 
 body {
 	color: gray;
+}
+.side-menu {
+	background-color: #252a30;
+}
+.side-menu > .side-menu__content {
+	padding-top: 50%;
+}
+
+.side-menu .item, .side-menu .item a {
+	background-color: transparent;
+	color: #c9c9c9;
+	border: 0;
+	border-bottom: 1px solid #444;
+}
+.list-icon {
+	font-size: 1.5em;
+	padding-right: 10px;
+	position: relative;
+	top: 4px;
 }
 
 .text--emphasized {
@@ -27,4 +51,127 @@ body {
 
 .text--sm {
 	font-size: 0.85em;
+}
+.text--lg {
+	font-size: 1.15em;
+}
+.text--xl {
+	font-size: 1.5em;
+}
+.text--xxl {
+	font-size: 2em;
+}
+.text--xxxl {
+	font-size: 3em;
+}
+
+.text--centered {
+	text-align: center;
+}
+.text--right {
+	text-align: right;
+}
+.text--bold {
+	font-weight: bold;
+}
+
+.icon--round {
+	padding: 15px;
+	border-radius: 50%;
+	background-color: #4a87ee;
+}
+
+
+.rate-panel {
+	position: relative;
+}
+.rate-panel > .col { 
+	border: 0;
+	height: 120px;
+}
+.rate-panel > .col:last-child { 
+	border-left: 1px #ddd solid;
+}
+.rate-panel__item {
+	position: absolute;
+	top: 15px;
+	left: 50%;
+	margin-left: -34px;
+
+	padding: 15px;
+	border-radius: 50%;
+	background-color: #4fc1e9;
+	color: white;
+	font-size: 2.5em;
+	border: 3px solid #e3e4e8;
+	height: 70px;
+	width: 70px;
+	text-align: center;
+}
+.rate-panel .rate-panel__label {
+	display:block;
+	margin-top: 85px;
+	text-align: center;
+	color: #aaa;
+}
+
+.user-picture {
+	margin: 35px;
+	padding: 0;
+	width: 130px;
+	border-radius: 50%;
+	display:block;
+	margin-left: auto;
+	margin-right: auto;
+	height: 130px;
+	box-shadow: 0 0 0 2px #f1f1f1;
+	border: 7px solid #f9f9f9;
+}
+
+.reward {
+	font-size: 5em;
+	color: white;
+	border-radius: 50%;
+	height: 110px;
+	width: 110px;
+	text-align: center;
+	padding-top: 20px;
+	border: 3px solid #dbdbdb;
+}
+
+.reward--blue {
+	background-color: #60c5e9;
+}
+
+.reward--red {
+	background-color: #f06074;
+}
+
+.reward--yellow {
+	background-color: #f7d049;
+}
+
+.reward--green {
+	background-color: #66dfaf;
+}
+
+.reward--purple {
+	background-color: #a787c6;
+}
+
+.reward--orange {
+	background-color: #fd8369;
+}
+
+.movie-progress {
+	margin: 0;
+}
+.movie-progress::-webkit-progress-bar {
+	background-color: #e8eaef;
+}
+.movie-progress::-webkit-progress-value {
+	background-color: #4fc1e9;
+}
+.support-image {
+	height: 300px;
 }

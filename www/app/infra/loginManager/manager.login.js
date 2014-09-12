@@ -2,15 +2,35 @@
 	'use strict';
 	var manager = angular.module('deedit.infra');
 
-	manager.factory('LoginManager', function($log, $ionicModal, $timeout) {
+	manager.factory('LoginManager', function($log, $ionicModal, $firebase, $firebaseSimpleLogin, $window) {
 		var LoginManager = function LoginManager(scope) {
 			this.scope = scope;
 			var $this = this;
+			this.firebaseRef = new Firebase('https://deedityh.firebaseio.com/');
+			this.auth = $firebaseSimpleLogin(this.firebaseRef);
+			this.user = null;
+
 			$ionicModal.fromTemplateUrl('app/infra/loginManager/login.html', {
 				scope: $this.scope
 			}).then(function(modal) {
 				$this.scope.modal = modal;
 			});
+
+			this.scope.$on("$firebaseSimpleLogin:login", function(event, user) {
+	    		$this.user = user;
+	    		$this.closeLogin();
+	  		});
+	  		this.scope.$on("$firebaseSimpleLogin:logout", function(event) {
+	    		$this.user = null;
+	    		$this.closeLogin();
+	  		});
+	  		this.scope.$on("$firebaseSimpleLogin:error", function(event, error) {
+	    		$log.warn("Error logging user in: ", error);
+	  		});
+
+	  		this.scope.$on('$destroy', function() {
+    			$this.scope.modal.remove();
+  			});
 		};
 
 		// Triggered in the login modal to close it
@@ -24,15 +44,15 @@
 		};
 
 		// Perform the login action when the user submits the login form
-		LoginManager.prototype.doLogin = function(loginData) {
+		LoginManager.prototype.login = function(loginData) {
 			$log.log('logging in', loginData);
-
-			// Simulate a login delay. Remove this and replace with your login
-			// code if using a login system
-			var $this = this;
-			$timeout(function() {
-				$this.closeLogin();
-			}, 1000);
+			this.auth.$login('facebook');
+		};
+		LoginManager.prototype.logout = function() {
+			this.auth.$logout();
+			$window.cookies.clear(function() {
+    			$log.log("Cookies cleared!");
+  			});
 		};
 
 		return LoginManager;

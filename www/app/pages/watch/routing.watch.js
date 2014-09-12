@@ -3,12 +3,12 @@
 	var page = angular.module('deedit.pages');
 	page.config(function($stateProvider) {
 		$stateProvider
-			.state('app.playlists', {
-				url: '/playlists',
+			.state('app.watch', {
+				url: '/watch/:projectid',
 				views: {
 					'menuContent': {
-						templateUrl: 'app/pages/playlists/playlists.html',
-						controller: 'PlaylistsController'
+						templateUrl: 'app/pages/watch/watch.html',
+						controller: 'WatchController'
 					}
 				}
 			});
