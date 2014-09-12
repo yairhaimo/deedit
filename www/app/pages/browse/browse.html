@@ -1,0 +1,48 @@
+<ion-view title="Browse">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left"class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <ion-content class="has-header">
+  Which Project would you like to support:
+    
+	<div class="list card project-card" ng-repeat="item in items">
+		<div class="item item-image">
+	    	<img src="http://lorempizza.com/380/240">
+	  	</div>
+	  	<a href="#" class="item item-icon-right">
+    		<span class="text--emphasized text--uppercase">
+    			{{item.title}}
+    		</span>
+    		<i class="icon ion-ios7-information-outline"></i>
+		</a>
+	  	<div class="item item-body">
+	  		<div class="row">
+	  			<span class="col col-75 text--sm">
+	  				Objective
+	  			</span>
+	  			<span class="col text--sm">
+	  				${{item.objective}}
+	  			</span>
+	  		</div>
+	  		<div class="row">
+	  			<span class="col col-75 text--sm">
+	  				Days to go
+	  			</span>
+	  			<span class="col text--sm">
+	  				<span class="pull-right">{{item.daysleft}}</span>
+	  			</span>
+	  		</div>
+	  		<div class="row">
+	  			<span class="col col-75 text--sm">
+	  				Status
+	  			</span>
+	  			<span class="col text--sm">
+	  				{{item.completed}}
+	  			</span>
+	  		</div>
+	  	</div>
+	  	<button class="button button-block button-calm">Support</button>
+	</div>
+	
+  </ion-content>
+</ion-view>

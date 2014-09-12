@@ -1,1 +1,30 @@
 /* Empty. Add your own CSS if you like */
+
+
+.row-50 {	
+	margin-top: 50%;
+}
+
+.project-card {
+	padding: 4px;
+}
+
+body {
+	color: gray;
+}
+
+.text--emphasized {
+	font-weight: bold;
+} 
+
+.text--capitalize {
+    text-transform: capitalize;
+}
+
+.text--uppercase {
+	text-transform: uppercase;
+}
+
+.text--sm {
+	font-size: 0.85em;
+}
